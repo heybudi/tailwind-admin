@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Tailwind Admin</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    </head>
+    <body class="h-full bg-grey-lighter font-sans text-sm text-grey-darker">
+        <nav class="flex fixed pin-t pin-x z-10 h-16 items-center bg-grey-lighter">
+            <div class="w-full max-w-2xl mx-auto">
+                <div class="flex">
+                    <div class="w-1/5 font-bold text-2xl text-grey-darker flex items-center">
+                        <strong class="text-teal-dark mr-1">ADM</strong>Panel
+                    </div>
+
+                    <div class="w-3/5 relative">
+                        <input type="text" class="appearance-none bg-grey-light border-px border border-grey-light w-full py-3 px-4 pl-10 rounded-lg text-sm text-grey-darker focus:text-grey-light focus:outline-none focus:bg-grey-lightest focus:border focus:border-grey" placeholder="Search anything...">
+                        <div class="absolute h-full pin-l pin-t pl-3 text-grey-dark flex items-center">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+
+                    <div class="w-1/5 flex">
+                        <div class="flex w-full items-center justify-end focus:text-teal-dark">
+                            <div class="notification">
+                                <i class="far fa-bell text-base mr-6 text-grey-darker"></i>
+                            </div>
+                            <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="Profile Picture" class="rounded-full border-2 border-grey w-8 h-8 mr-3">
+                            <div class="flex items-center">
+                                <span class="">Admin</span>
+                                <i class="fas fa-chevron-down ml-3 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mt-22">
+            <div class="w-full max-w-2xl mx-auto flex">
+                <div class="w-1/5">
+                    <div class="sidebar sidebar-menu sticky" style="top: 5.5rem">
+                        <div class="flex flex-col">
+                            <div><a href="./index.html" class="no-underline block py-3 text-teal font-bold hover:text-teal-dark"><i class="fas fa-home mr-2"></i> Dashboard</a></div>
+                            <div><a href="./form.html" class="no-underline block py-3 text-grey-dark font-bold hover:text-grey-darker"><i class="fas fa-user-cog mr-2"></i> Users</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-4/5">
+                    <div class="content-wrapper flex flex-col">
+                        <div class="content-heading my-3">
+                            <h3 class="">
+                                <span>Dashboard</span>
+                                <span class="mx-4">&mdash;</span>
+                                <a href="#" class="text-xs no-underline text-teal hover:text-teal-dark"><i class="fas fa-plus-circle"></i> Add New</a>
+                            </h3>
+                        </div>
+
+                        <!-- <div class="flex justify-between my-4">
+                            <div class="flex-1 rounded bg-white border border-grey-light mx-2 ml-0 h-32 min-h-32 max-h-32">A</div>
+                            <div class="flex-1 rounded bg-white border border-grey-light mx-2">B</div>
+                            <div class="flex-1 rounded bg-white border border-grey-light mx-2">C</div>
+                            <div class="flex-1 rounded bg-white border border-grey-light mx-2 mr-0">D</div>
+                        </div> -->
+                        <div class="content-body my-2">
+                            <div class="rounded bg-white border border-grey-light">
+                                <table class="table rounded w-full h-full">
+                                    <thead >
+                                        <tr class="">
+                                            <th class="border-b border-grey-lighter rounded-tl bg-grey-lightest py-4 w-12">
+                                                <input type="checkbox" name="asd" id="check-all">
+                                            </th>
+                                            <!-- <th class="border-b border-grey-lighter bg-grey-lightest py-4 w-12">#</th> -->
+                                            <th class="border-b border-grey-lighter bg-grey-lightest py-4 text-left">Item Name</th>
+                                            <th class="border-b border-grey-lighter bg-grey-lightest py-4 pr-4 w-24 text-right">Price</th>
+                                            <th class="border-b border-grey-lighter bg-grey-lightest py-4 w-16 text-center">Qty</th>
+                                            <th class="border-b border-grey-lighter rounded-tr bg-grey-lightest py-4 w-24 text-right pr-4">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text">
+                                            <td class="border-t border-grey-lighter py-4 text-center">
+                                                <input type="checkbox" name="" id="">
+                                            </td>
+                                            <!-- <td class="border-t border-grey-lighter py-4 text-center">1</td> -->
+                                            <td class="border-t border-grey-lighter py-4">Mocha Ice</td>
+                                            <td class="border-t border-grey-lighter py-4 pr-4 text-right">12.000</td>
+                                            <td class="border-t border-grey-lighter py-4 text-center">1</td>
+                                            <td class="border-t border-grey-lighter py-4 pr-4 text-right">12.000</td>
+                                        </tr>
+                                        <tr class="text">
+                                            <td class="border-t border-grey-lighter py-4 text-center">
+                                                <input type="checkbox" name="" id="">
+                                            </td>
+                                            <!-- <td class="border-t border-grey-lighter py-4 text-center">2</td> -->
+                                            <td class="border-t border-grey-lighter py-4">Mocha Ice XXX</td>
+                                            <td class="border-t border-grey-lighter py-4 pr-4 text-right">24.000</td>
+                                            <td class="border-t border-grey-lighter py-4 text-center">1</td>
+                                            <td class="border-t border-grey-lighter py-4 pr-4 text-right">24.000</td>
+                                        </tr>
+                                        <tr class="text">
+                                            <td class="border-t border-grey-lighter py-4 text-center">
+                                                <input type="checkbox" name="" id="">
+                                            </td>
+                                            <!-- <td class="border-t border-grey-lighter py-4 text-center">3</td> -->
+                                            <td class="border-t border-grey-lighter py-4">Vanilla Ice</td>
+                                            <td class="border-t border-grey-lighter py-4 pr-4 text-right">18.000</td>
+                                            <td class="border-t border-grey-lighter py-4 text-center">3</td>
+                                            <td class="border-t border-grey-lighter py-4 pr-4 text-right">54.000</td>
+                                        </tr>
+                                        <tr class="text">
+                                            <td class="border-t border-grey-lighter py-4 text-center">
+                                                <input type="checkbox" name="" id="">
+                                            </td>
+                                            <!-- <td class="border-t border-grey-lighter py-4 text-center">3</td> -->
+                                            <td class="border-t border-grey-lighter py-4">Machiato Caramel</td>
+                                            <td class="border-t border-grey-lighter py-4 pr-4 text-right">14.000</td>
+                                            <td class="border-t border-grey-lighter py-4 text-center">2</td>
+                                            <td class="border-t border-grey-lighter py-4 pr-4 text-right">28.000</td>
+                                        </tr>
+                                        <tr class="text">
+                                            <td class="border-t border-grey-lighter py-4 text-center">
+                                                <input type="checkbox" name="" id="">
+                                            </td>
+                                            <!-- <td class="border-t border-grey-lighter py-4 text-center">3</td> -->
+                                            <td class="border-t border-grey-lighter py-4">Ice Blend Oreo</td>
+                                            <td class="border-t border-grey-lighter py-4 pr-4 text-right">22.000</td>
+                                            <td class="border-t border-grey-lighter py-4 text-center">1</td>
+                                            <td class="border-t border-grey-lighter py-4 pr-4 text-right">22.000</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <!-- <td colspan="4" class="text-right font-bold pr-4 py-4 border-t border-grey-lighter">Total</td> -->
+                                            <!-- <td class="font-bold text-right pr-4 border-t border-grey-lighter">90.000</td> -->
+                                            <td colspan="5" class="text-right py-4 pr-4 border-t border-grey-lighter">
+                                                <ul class="list-reset flex justify-end">
+                                                    <li class="mx-1"><a href="#" class="p-2 px-3 no-underline rounded hover:bg-grey-lighter hover:text-grey-darker"><i class="fas fa-chevron-left"></i></a></li>
+                                                    <li class="mx-1"><a href="#" class="p-2 px-3 min-w-1 no-underline rounded bg-grey-lighter text-grey-darker ">1</a></li>
+                                                    <li class="mx-1"><a href="#" class="p-2 px-3 no-underline rounded hover:bg-grey-lighter hover:text-grey-darker">2</a></li>
+                                                    <li class="mx-1"><a href="#" class="p-2 px-3 no-underline rounded hover:bg-grey-lighter hover:text-grey-darker">3</a></li>
+                                                    <li class="mx-1"><a href="#" class="p-2 px-3 no-underline rounded hover:bg-grey-lighter hover:text-grey-darker">4</a></li>
+                                                    <li class="mx-1"><a href="#" class="p-2 px-3 no-underline rounded hover:bg-grey-lighter hover:text-grey-darker">...</a></li>
+                                                    <li class="mx-1"><a href="#" class="p-2 px-3 no-underline rounded hover:bg-grey-lighter hover:text-grey-darker"><i class="fas fa-chevron-right"></i></a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
