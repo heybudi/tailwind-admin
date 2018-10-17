@@ -30,6 +30,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'form.html',
       template: 'src/form.html',
-    })
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'table.html',
+      template: 'src/table.html',
+    }),
   ],
 }

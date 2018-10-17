@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Tailwind Admin - Form</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    </head>
+    <body class="h-full bg-grey-lighter font-sans text-sm text-grey-darker">
+        <nav class="flex fixed pin-t pin-x z-10 h-16 items-center bg-grey-lighter">
+            <div class="w-full max-w-3xl mx-auto px-2">
+                <div class="flex">
+                    <div class="w-1/5 font-bold text-2xl text-grey-darker flex items-center">
+                        <strong class="text-teal-dark mr-1">Admin</strong>Portal
+                    </div>
+
+                    <div class="w-3/5 relative">
+                        <input type="text" class="appearance-none bg-grey-light border-px border border-grey-light w-full py-3 px-4 pl-10 rounded-lg text-sm text-grey-darker focus:text-grey-light focus:outline-none focus:bg-grey-lightest focus:border focus:border-grey" placeholder="Search anything...">
+                        <div class="absolute h-full pin-l pin-t pl-4 text-grey-dark flex items-center">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+
+                    <div class="w-1/5 flex">
+                        <div class="flex w-full items-center justify-end focus:text-teal-dark">
+                            <div class="notification">
+                                <i class="far fa-bell text-base mr-6 text-grey-darker"></i>
+                            </div>
+                            <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="Profile Picture" class="rounded-full border-2 border-white shadow w-8 h-8 mr-3">
+                            <div class="flex items-center">
+                                <span class="">Admin</span>
+                                <i class="fas fa-chevron-down ml-3 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="pt-20 bg-grey-lighter">
+            <div class="w-full max-w-3xl mx-auto flex">
+                <div class="w-1/5 px-2">
+                    <div class="sidebar sidebar-menu sticky" style="top: 6rem;">
+                        <div class="flex flex-col">
+                            <div><a href="./table.html" class="no-underline block py-2 my-1 text-grey-dark hover:text-grey-darker"><i class="w-4 fas fa-home mr-2"></i> <span class="text-shadow">Dashboard</span></a></div>
+                            <div><a href="./table.html" class="no-underline block py-2 my-1 text-grey-dark hover:text-grey-darker"><i class="w-4 fas fa-shopping-basket mr-2"></i> <span class="text-shadow">Merchants</span></a></div>
+                            <div><a href="./table.html" class="no-underline block py-2 my-1 text-grey-dark hover:text-grey-darker"><i class="w-4 fas fa-store mr-2"></i> <span class="text-shadow">Stores</span></a></div>
+                            <div><a href="./table.html" class="no-underline block py-2 my-1 text-grey-dark hover:text-grey-darker"><i class="w-4 fas fa-tags mr-2"></i> <span class="text-shadow">Vouchers &amp; Coupons</span></a></div>
+                            <div><a href="./table.html" class="no-underline block py-2 my-1 text-grey-dark hover:text-grey-darker"><i class="w-4 fas fa-percentage mr-2"></i> <span class="text-shadow">Promotions</span></a></div>
+                            <div><a href="./table.html" class="no-underline block py-2 my-1 text-grey-dark hover:text-grey-darker"><i class="w-4 far fa-calendar-alt mr-2"></i> <span class="text-shadow">Events</span></a></div>
+                            <div><a href="./table.html" class="no-underline block py-2 pt-3 my-1 text-teal font-bold border-t border-grey-light hover:text-teal-dark"><i class="w-4 fas fa-user-cog mr-2"></i> Users</a></div>
+                            <div><a href="./table.html" class="no-underline block py-2 pt-4 my-1 text-grey-dark border-t border-grey-light hover:text-grey-darker"><i class="w-4 fas fa-tasks mr-2"></i> Ongoing Jobs <span class="text-xs font-normal px-2 py-1 rounded-full bg-orange-light text-white ml-2">200</span></a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-4/5 px-2 bg-grey-lighter">
+                    <div class="panel flex flex-col bg-grey-lighter">
+                        <div class="panel-heading bg-grey-lighter sticky h-full pt-6" style="top: 4rem;">
+                            <div class="table-heading-info flex items-center justify-between">
+                                <h3 class="pb-2">
+                                    <span class="mr-4">Users</span>
+                                    <!-- <span class="text-xs text-grey-dark font-normal ml-2">Manage your users.</span> -->
+                                    <!-- <span class="mx-4">&mdash;</span> -->
+                                    <a href="./form.html" class="text-xs mx-2 font-normal no-underline text-teal hover:text-teal-dark"><i class="fas fa-plus-circle"></i> Add New</a>
+                                    <a href="#" class="text-xs mx-2 font-normal no-underline text-teal hover:text-teal-dark"><i class="fas fa-file-csv"></i> Export</a>
+                                </h3>
+                                <div class="text-right text-xs flex items-center flex-row">
+                                    <div class="h-8 flex items-center justify-end">
+                                        <span>Filter by</span>
+                                        <span class="filter-role mx-2 h-full">
+                                            <select name="" id="" class="h-full appearance-none outline-none p-4 text-grey-dark border rounded border-grey-light bg-white">
+                                                <option value="" selected disabled>- Role -</option>
+                                                <option value="admin">Admin</option>
+                                                <option value="mo">Merchant's Owner</option>
+                                                <option value="str-admin">Store's Admin</option>
+                                            </select>
+                                        </span>
+
+                                        <span class="filter-status mx-2 h-full">
+                                            <select name="" id="" class="h-full appearance-none outline-none p-4 text-grey-dark rounded border border-grey-light bg-white">
+                                                <option value="" selected disabled>- Status -</option>
+                                                <option value="active">Active</option>
+                                                <option value="inactive">Inactive</option>
+                                            </select>
+                                        </span>
+
+                                        <span class="filter-search ml-2 h-full flex items-center">
+                                            <input type="text" class="flex-1 appearance-none outline-none p-2 rounded-l border-t border-l border-b border-grey-light text-grey-dark focus:text-grey-darker" placeholder="Search in Users...">
+                                            <button class="p-2 border rounded-r border-grey-light"><i class="fas fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="box-filters text-xs flex flex-row justify-between rounded-t border bg-grey-lightest p-2 mt-2 mb-1">
+                                <div class="w-4/5">
+                                    <div class="h-full flex items-center justify-start">
+                                        <button class="border-grey-light bg-teal rounded p-2 text-white focus:outline-none appearance-none">
+                                            <span class="mr-2">With selected item(s)</span>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="w-1/5">
+                                    <div class="h-full flex items-center justify-end">
+                                        <span class="">Per Page</span>
+                                        <select name="" id="" class="h-8 appearance-none outline-none p-2 ml-2 text-grey rounded bg-white border border-grey-light ">
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="50">100</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-heading w-full bg-white border border-t-0 border-grey-light -mt-1">
+                                <div class="flex justify-between text-center font-bold bg-grey-lightest text-xs">
+                                    <div class="border-b border-grey-lighter rounded-tl py-3 w-12">
+                                        <input type="checkbox" name="asd" id="check-all">
+                                    </div>
+                                    <div class="border-b border-grey-lighter py-3 text-left relative flex-1">
+                                        <span class="sort-by absolute flex flex-col align-middle items-center justify-center h-full text-xs pin-t">
+                                            <button type="button" class="max-h-2 -mt-1">
+                                                <i class="fas fa-sort-up text-teal hover:text-teal"></i>
+                                            </button>
+                                            <button type="button" class="max-h-2 -mt-1">
+                                                <i class="fas fa-sort-down text-grey -mt-3 hover:text-teal"></i>
+                                            </button>
+                                        </span>
+                                        <span class="pl-4">Name</span>
+                                    </div>
+                                    <div class="border-b border-grey-lighter py-3 w-32 text-center">Role</div>
+                                    <div class="border-b border-grey-lighter py-3 w-24 text-center">Subs</div>
+                                    <div class="border-b border-grey-lighter py-3 w-24 text-right">Joined</div>
+                                    <div class="border-b border-grey-lighter rounded-tr py-3 w-24 text-right pr-4">&nbsp;</div>
+                                </div class="flex">
+                            </div>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="table w-full border-b border-l border-r rounded-b overflow-hidden border-grey-light -mt-1">
+                                <div class="table-items text-xs">
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-3 h-full flex items-center justify-center w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-3 flex-1">
+                                            <div class="flex">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-8 w-8 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 w-32 text-center">
+                                            Merchant's Owner
+                                        </div>
+                                        <div class="py-3 w-24 text-center">
+                                            <span class="text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-3 w-24 text-right">2 hours ago</div>
+                                        <div class="py-3 w-24 text-right">
+                                            <div class="actions flex justify-end pr-2">
+                                                <a href="#" class="no-underline px-1 mx-1 text-teal-light hover:text-teal"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-red-light hover:text-red"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-3 h-full flex items-center justify-center w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-3 flex-1">
+                                            <div class="flex text-xs">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-8 w-8 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 w-32 text-center">
+                                            Merchant's Owner
+                                        </div>
+                                        <div class="py-3 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-3 w-24 text-right">16 hours ago</div>
+                                        <div class="py-3 w-24 text-right">
+                                            <div class="actions flex justify-end pr-2">
+                                                <a href="#" class="no-underline px-1 mx-1 text-teal-light hover:text-teal"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-red-light hover:text-red"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-3 h-full flex items-center justify-center w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-3 flex-1">
+                                            <div class="flex text-xs">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-8 w-8 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 w-32 text-center">
+                                            Merchant's Owner
+                                        </div>
+                                        <div class="py-3 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-3 w-24 text-right">Yesterday</div>
+                                        <div class="py-3 w-24 text-right">
+                                            <div class="actions flex justify-end pr-2">
+                                                <a href="#" class="no-underline px-1 mx-1 text-teal-light hover:text-teal"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-red-light hover:text-red"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-3 h-full flex items-center justify-center w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-3 flex-1">
+                                            <div class="flex text-xs">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-8 w-8 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 w-32 text-center">
+                                            Merchant's Owner
+                                        </div>
+                                        <div class="py-3 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-3 w-24 text-right">A week ago</div>
+                                        <div class="py-3 w-24 text-right">
+                                            <div class="actions flex justify-end pr-2">
+                                                <a href="#" class="no-underline px-1 mx-1 text-teal-light hover:text-teal"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-red-light hover:text-red"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-3 h-full flex items-center justify-center w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-3 flex-1">
+                                            <div class="flex text-xs">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-8 w-8 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 w-32 text-center">
+                                            Merchant's Owner
+                                        </div>
+                                        <div class="py-3 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-3 w-24 text-right">2 weeks ago</div>
+                                        <div class="py-3 w-24 text-right">
+                                            <div class="actions flex justify-end pr-2">
+                                                <a href="#" class="no-underline px-1 mx-1 text-teal-light hover:text-teal"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-red-light hover:text-red"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-3 h-full flex items-center justify-center w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-3 flex-1">
+                                            <div class="flex text-xs">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-8 w-8 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 w-32 text-center">
+                                            Merchant's Owner
+                                        </div>
+                                        <div class="py-3 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-3 w-24 text-right">2 weeks ago</div>
+                                        <div class="py-3 w-24 text-right">
+                                            <div class="actions flex justify-end pr-2">
+                                                <a href="#" class="no-underline px-1 mx-1 text-teal-light hover:text-teal"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-red-light hover:text-red"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-3 h-full flex items-center justify-center w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-3 flex-1">
+                                            <div class="flex text-xs">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-8 w-8 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 w-32 text-center">
+                                            Merchant's Owner
+                                        </div>
+                                        <div class="py-3 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-3 w-24 text-right">2 weeks ago</div>
+                                        <div class="py-3 w-24 text-right">
+                                            <div class="actions flex justify-end pr-2">
+                                                <a href="#" class="no-underline px-1 mx-1 text-teal-light hover:text-teal"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-red-light hover:text-red"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-3 h-full flex items-center justify-center w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-3 flex-1">
+                                            <div class="flex text-xs">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-8 w-8 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 w-32 text-center">
+                                            Merchant's Owner
+                                        </div>
+                                        <div class="py-3 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-3 w-24 text-right">2 weeks ago</div>
+                                        <div class="py-3 w-24 text-right">
+                                            <div class="actions flex justify-end pr-2">
+                                                <a href="#" class="no-underline px-1 mx-1 text-teal-light hover:text-teal"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-red-light hover:text-red"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-3 h-full flex items-center justify-center w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-3 flex-1">
+                                            <div class="flex text-xs">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-8 w-8 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 w-32 text-center">
+                                            Merchant's Owner
+                                        </div>
+                                        <div class="py-3 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-3 w-24 text-right">2 weeks ago</div>
+                                        <div class="py-3 w-24 text-right">
+                                            <div class="actions flex justify-end pr-2">
+                                                <a href="#" class="no-underline px-1 mx-1 text-teal-light hover:text-teal"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-red-light hover:text-red"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-3 h-full flex items-center justify-center w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-3 flex-1">
+                                            <div class="flex text-xs">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-8 w-8 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 w-32 text-center">
+                                            Merchant's Owner
+                                        </div>
+                                        <div class="py-3 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-3 w-24 text-right">2 weeks ago</div>
+                                        <div class="py-3 w-24 text-right">
+                                            <div class="actions flex justify-end pr-2">
+                                                <a href="#" class="no-underline px-1 mx-1 text-teal-light hover:text-teal"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-red-light hover:text-red"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-3 h-full flex items-center justify-center w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-3 flex-1">
+                                            <div class="flex text-xs">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-8 w-8 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-3 w-32 text-center">
+                                            Merchant's Owner
+                                        </div>
+                                        <div class="py-3 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-3 w-24 text-right">2 weeks ago</div>
+                                        <div class="py-3 w-24 text-right">
+                                            <div class="actions flex justify-end pr-2">
+                                                <a href="#" class="no-underline px-1 mx-1 text-teal-light hover:text-teal"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-red-light hover:text-red"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-4 w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-4 flex-1">
+                                            <div class="flex">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-10 w-10 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="font-bold">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">Oct 15, 2018</div>
+                                        <div class="py-4 w-24 text-right">
+                                            <div class="actions flex justify-center">
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-teal hover:text-teal-dark"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-red hover:text-red-dark"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-4 w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-4 flex-1">
+                                            <div class="flex">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-10 w-10 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="font-bold">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">Oct 15, 2018</div>
+                                        <div class="py-4 w-24 text-right">
+                                            <div class="actions flex justify-center">
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-teal hover:text-teal-dark"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-red hover:text-red-dark"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-4 w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-4 flex-1">
+                                            <div class="flex">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-10 w-10 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="font-bold">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">Oct 15, 2018</div>
+                                        <div class="py-4 w-24 text-right">
+                                            <div class="actions flex justify-center">
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-teal hover:text-teal-dark"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-red hover:text-red-dark"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-4 w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-4 flex-1">
+                                            <div class="flex">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-10 w-10 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="font-bold">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">Oct 15, 2018</div>
+                                        <div class="py-4 w-24 text-right">
+                                            <div class="actions flex justify-center">
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-teal hover:text-teal-dark"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-red hover:text-red-dark"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <!-- <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-4 w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-4 flex-1">
+                                            <div class="flex">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-10 w-10 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="font-bold">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">Oct 15, 2018</div>
+                                        <div class="py-4 w-24 text-right">
+                                            <div class="actions flex justify-center">
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-teal hover:text-teal-dark"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-red hover:text-red-dark"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-4 w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-4 flex-1">
+                                            <div class="flex">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-10 w-10 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="font-bold">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">Oct 15, 2018</div>
+                                        <div class="py-4 w-24 text-right">
+                                            <div class="actions flex justify-center">
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-teal hover:text-teal-dark"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-red hover:text-red-dark"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-4 w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-4 flex-1">
+                                            <div class="flex">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-10 w-10 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="font-bold">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">Oct 15, 2018</div>
+                                        <div class="py-4 w-24 text-right">
+                                            <div class="actions flex justify-center">
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-teal hover:text-teal-dark"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-red hover:text-red-dark"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-4 w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-4 flex-1">
+                                            <div class="flex">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-10 w-10 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="font-bold">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">Oct 15, 2018</div>
+                                        <div class="py-4 w-24 text-right">
+                                            <div class="actions flex justify-center">
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-teal hover:text-teal-dark"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-red hover:text-red-dark"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-between border-l items-center border-r border-t border-grey-lighter bg-white hover:bg-grey-lightest">
+                                        <div class="py-4 w-12 text-center">
+                                            <input type="checkbox" name="" id="">
+                                        </div>
+                                        <div class="py-4 flex-1">
+                                            <div class="flex">
+                                                <img src="https://pbs.twimg.com/profile_images/1048836526237306886/kUxssl4H_normal.jpg" alt="User picture" class="rounded-full h-10 w-10 mr-2">
+                                                <div class="item-info flex flex-col">
+                                                    <div class="font-bold">dr. Bernard Mahfoudz</div>
+                                                    <div class="text-grey text-xs my-1">Just ordinary doctor.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">
+                                            <span class="text-xs text-orange py-1 px-2 bg-orange-lightest rounded"><i class="fas fa-certificate"></i> Premium</span>
+                                        </div>
+                                        <div class="py-4 w-24 text-center">Oct 15, 2018</div>
+                                        <div class="py-4 w-24 text-right">
+                                            <div class="actions flex justify-center">
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-teal hover:text-teal-dark"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="no-underline px-1 mx-1 text-sm text-red hover:text-red-dark"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+
+                                <div class="table-pagination bg-white border-t border-grey-lighter py-4 text-xs">
+                                    <div class="flex items-center justify-between">
+                                        <div class="pagination-info flex-1 pl-3">
+                                            Showing 1-5 from 100 entries (Filtered from 1.300 entries)
+                                        </div>
+                                        <div class="pagination-links px-2">
+                                            <ul class="list-reset flex items-center justify-center">
+                                                <li class="mx-1"><a href="#" class="no-underline text-grey-dark bg-grey-lighter hover:bg-grey-light hover:text-grey-darker rounded px-3 py-2"><i class="fas fa-chevron-left"></i></a></li>
+                                                <li class="mx-1"><a href="#" class="no-underline text-grey-darker bg-grey-light hover:bg-grey-light hover:text-grey-darker rounded px-3 py-2">1</a></li>
+                                                <li class="mx-1"><a href="#" class="no-underline text-grey-dark bg-grey-lighter hover:bg-grey-light hover:text-grey-darker rounded px-3 py-2">2</a></li>
+                                                <li class="mx-1"><a href="#" class="no-underline text-grey-dark bg-grey-lighter hover:bg-grey-light hover:text-grey-darker rounded px-3 py-2">3</a></li>
+                                                <li class="mx-1"><a href="#" class="no-underline text-grey-dark bg-grey-lighter hover:bg-grey-light hover:text-grey-darker rounded px-3 py-2">...</a></li>
+                                                <li class="mx-1"><a href="#" class="no-underline text-grey-dark bg-grey-lighter hover:bg-grey-light hover:text-grey-darker rounded px-3 py-2"><i class="fas fa-chevron-right"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel flex flex-col bg-grey-lighter mt-8">
+                        <div class="panel-heading bg-grey-lighter">
+                            <h3>Last Activities</h3>
+                        </div>
+                        <div class="panel-body">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
