@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="../node_modules/flatpickr/dist/flatpickr.min.css">
     </head>
     <body class="h-full bg-grey-lighter font-sans text-sm text-grey-darker">
         <nav class="flex fixed pin-t pin-x z-10 h-16 items-center bg-grey-lighter">
@@ -55,7 +56,7 @@
                     </div>
                 </div>
 
-                <div class="w-4/5 px-2 bg-grey-lighter">
+                <div class="w-4/5 px-2 bg-grey-lighter pb-16">
                     <div class="panel flex flex-col bg-grey-lighter w-3/5">
                         <div class="panel-heading bg-grey-lighter"">
                             <div class="table-heading-info flex items-center justify-between">
@@ -65,10 +66,11 @@
                             </div>
                         </div>
 
-                        <div class="panel-body bg-white py-4 px-2 rounded-t border border-grey-light">
+                        <div class="panel-body bg-white p-2 rounded-t border border-grey-light">
                             <!-- vertical form uses flex-col -->
                             <div class="flex flex-col">
-                                <div class="form-group flex">
+                                <!-- if we have 2 or more cols in a single line, then we should wrap them in flex-row -->
+                                <div class="form-group-line my-2 flex flex-row">
                                     <div class="flex-1 mx-2">
                                         <div class="flex flex-col">
                                             <!-- label should be component -->
@@ -91,8 +93,51 @@
                                     </div>
                                 </div>
 
-                                <div class="group-title mt-6 mb-4 mx-2 pb-2 border-b border-grey-light text-grey-dark font-bold">Address</div>
-                                <div class="form-group flex">
+                                <div class="group-title mt-6 mb-2 mx-2 pb-2 border-b border-grey-light text-grey-dark font-bold">Birthday</div>
+                                <div class="form-group-line my-2 flex flex-row">
+                                    <div class="flex-1 mx-2">
+                                        <div class="flex flex-col">
+                                            <!-- label should be component -->
+                                            <label for="first_name" class="text-xs text-grey-dark mb-1">Day</label>
+                                            <div class="w-full">
+                                                <!-- input should be a component -->
+                                                <select type="text" class="w-full appearance-none outline-none my-1 p-2 rounded bg-grey-lightest bg-grey-lightest border border-grey-light text-grey-dark focus:text-grey-darker" placeholder="Country">
+                                                    <option value="" disabled selected>- Select Day -</option>
+                                                    <option value="ID">Indonesia</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 mx-2">
+                                        <div class="flex flex-col">
+                                            <!-- label should be component -->
+                                            <label for="last_name" class="text-xs text-grey-dark mb-1">Month</label>
+                                            <div class="w-full">
+                                                <!-- input should be a component -->
+                                                <select type="text" class="w-full appearance-none outline-none my-1 p-2 rounded bg-grey-lightest bg-grey-lightest border border-grey-light text-grey-dark focus:text-grey-darker" placeholder="Country">
+                                                    <option value="" disabled selected>- Select Month -</option>
+                                                    <option value="ID">Indonesia</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 mx-2">
+                                        <div class="flex flex-col">
+                                            <!-- label should be component -->
+                                            <label for="last_name" class="text-xs text-grey-dark mb-1">Year</label>
+                                            <div class="w-full">
+                                                <!-- input should be a component -->
+                                                <select type="text" class="w-full appearance-none outline-none my-1 p-2 rounded bg-grey-lightest bg-grey-lightest border border-grey-light text-grey-dark focus:text-grey-darker" placeholder="Country">
+                                                    <option value="" disabled selected>- Select Year -</option>
+                                                    <option value="ID">Indonesia</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group-title mt-6 mb-2 mx-2 pb-2 border-b border-grey-light text-grey-dark font-bold">Contact Info</div>
+                                <div class="form-group-line my-2 flex">
                                     <div class="flex-1 mx-2">
                                         <div class="flex flex-col">
                                             <!-- label should be component -->
@@ -104,7 +149,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group flex mt-3">
+
+                                <div class="form-group-line my-2 flex flex-row">
                                     <div class="flex-1 mx-2">
                                         <div class="flex flex-col">
                                             <!-- label should be component -->
@@ -121,13 +167,106 @@
                                     <div class="flex-1 mx-2">
                                         <div class="flex flex-col">
                                             <!-- label should be component -->
+                                            <label for="city" class="text-xs text-grey-dark mb-1">State/Province</label>
+                                            <div class="w-full">
+                                                <!-- input should be a component -->
+                                                <select type="text" class="w-full appearance-none outline-none my-1 p-2 rounded bg-grey-lightest bg-grey-lightest border border-grey-light text-grey-dark focus:text-grey-darker" placeholder="Country">
+                                                    <option value="" disabled selected>- Select State/Province -</option>
+                                                    <option value="ID">Bali</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group-line my-2 flex flex-row">
+                                    <div class="flex-1 mx-2">
+                                        <div class="flex flex-col">
+                                            <!-- label should be component -->
                                             <label for="city" class="text-xs text-grey-dark mb-1">City</label>
                                             <div class="w-full">
                                                 <!-- input should be a component -->
                                                 <select type="text" class="w-full appearance-none outline-none my-1 p-2 rounded bg-grey-lightest bg-grey-lightest border border-grey-light text-grey-dark focus:text-grey-darker" placeholder="Country">
-                                                    <option value="" disabled selected>- Select City -</option>
-                                                    <option value="ID">Bali</option>
+                                                    <option value="" disabled selected>- Select City</option>
+                                                    <option value="ID">Indonesia</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 mx-2">
+                                        <div class="flex flex-col">
+                                            <!-- label should be component -->
+                                            <label for="city" class="text-xs text-grey-dark mb-1">Postal Code</label>
+                                            <div class="w-full">
+                                                <!-- input should be a component -->
+                                                <input type="text" class="w-full appearance-none outline-none my-1 p-2 rounded bg-grey-lightest border border-grey-light text-grey-dark focus:bg-white" placeholder="Postal Code">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group-line my-2 flex flex-row">
+                                    <div class="flex-1 mx-2">
+                                        <div class="flex flex-col">
+                                            <!-- label should be component -->
+                                            <label for="city" class="text-xs text-grey-dark mb-1">Phone Number</label>
+                                            <div class="w-full">
+                                                <!-- input should be a component -->
+                                                <input type="text" class="w-full appearance-none outline-none my-1 p-2 rounded bg-grey-lightest border border-grey-light text-grey-dark focus:bg-white" placeholder="Phone Number">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-1 mx-2">
+                                        <div class="flex flex-col">
+                                            <!-- label should be component -->
+                                            <label for="city" class="text-xs text-grey-dark mb-1">Mobile Number</label>
+                                            <div class="w-full">
+                                                <!-- input should be a component -->
+                                                <input type="text" class="w-full appearance-none outline-none my-1 p-2 rounded bg-grey-lightest border border-grey-light text-grey-dark focus:bg-white" placeholder="Mobile Number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="my-2">
+                                    <div class="h-px bg-grey-lighter mx-2">&nbsp;</div>
+                                </div>
+
+                                <div class="form-group-line my-2 flex flex-row">
+                                    <div class="flex-1 mx-2">
+                                        <!-- label should be component -->
+                                        <label for="city" class="text-xs text-grey-dark mb-1">Email Address</label>
+                                        <div class="w-full">
+                                            <!-- input should be a component -->
+                                            <input type="email" class="w-full appearance-none outline-none my-1 p-2 rounded bg-grey-lightest border border-grey-light text-grey-dark focus:bg-white" placeholder="Email Address">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group-title mt-6 mb-2 mx-2 pb-2 border-b border-grey-light text-grey-dark font-bold">Datepicker</div>
+                                <div class="form-group-line my-2 flex flex-row">
+                                    <div class="flex-1 mx-2">
+                                        <div class="flex flex-col">
+                                            <!-- label should be component -->
+                                            <label for="first_name" class="text-xs text-grey-dark mb-1">Flatpickr</label>
+                                            <div class="w-full">
+                                                <!-- input should be a component -->
+                                                <input type="text" id="datepicker1" class="w-full appearance-none outline-none my-1 p-2 rounded bg-grey-lightest border border-grey-light text-grey-dark focus:bg-white" placeholder="Email Address">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="group-title mt-6 mb-2 mx-2 pb-2 border-b border-grey-light text-grey-dark font-bold">Input Masking</div>
+                                <div class="form-group-line my-2 flex flex-row">
+                                    <div class="flex-1 mx-2">
+                                        <div class="flex flex-col">
+                                            <!-- label should be component -->
+                                            <label for="first_name" class="text-xs text-grey-dark mb-1">Currency/Money</label>
+                                            <div class="w-full">
+                                                <!-- input should be a component -->
+                                                <input type="text" id="inputmask1" class="w-full appearance-none outline-none my-1 p-2 rounded bg-grey-lightest border border-grey-light text-grey-dark focus:bg-white" placeholder="Email Address">
                                             </div>
                                         </div>
                                     </div>
@@ -135,7 +274,7 @@
                             </div>
                         </div>
 
-                        <div class="panel-footer flex items-center justify-end px-2 py-4 bg-grey-lightest rounded-b border-b border-l border-r border-grey-light">
+                        <div class="panel-footer flex items-center justify-center px-2 py-4 bg-grey-lightest rounded-b border-b border-l border-r border-grey-light">
                             <!-- button should be component -->
                             <button type="submit" class="py-2 px-4 bg-teal hover:bg-teal-dark text-white rounded mx-2">
                                 <i class="fas fa-check"></i> Save
@@ -145,7 +284,7 @@
                         </div>
                     </div>
 
-                    <div class="panel flex flex-col bg-grey-lighter mt-8 pb-16">
+                    <!-- <div class="panel flex flex-col bg-grey-lighter mt-8 pb-16">
                         <div class="panel-heading bg-grey-lighter my-4">
                             <h3>Add New User</h3>
                         </div>
@@ -181,9 +320,37 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
+        <!-- flatpickr datepicker -->
+        <script src="../node_modules/flatpickr/dist/flatpickr.min.js"></script>
+
+        <!-- inputmask -->
+        <script src="../node_modules/inputmask/dist/min/inputmask/dependencyLibs/inputmask.dependencyLib.min.js"></script>
+        <script src="../node_modules/inputmask/dist/min/inputmask/inputmask.min.js"></script>
+        <script src="../node_modules/inputmask/dist/min/inputmask/inputmask.extensions.min.js"></script>
+        <script src="../node_modules/inputmask/dist/min/inputmask/inputmask.numeric.extensions.min.js"></script>
+        <!-- end inputmask -->
+
+        <script>
+            flatpickr('#datepicker1', {
+                dateFormat: 'd/m/Y'
+            });
+
+            var inputmask1 = new Inputmask('currency', {
+                numeric: true,
+                groupSeparator: '.',
+                digits: 0,
+                allowMinus: false,
+                radixPoint: '.',
+                prefix: 'Rp ',
+                rightAlign: false
+            });
+            inputmask1.mask('#inputmask1');
+
+
+        </script>
     </body>
 </html>

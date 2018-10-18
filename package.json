@@ -16,5 +16,10 @@
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.1"
+  },
+  "dependencies": {
+    "choices.js": "^3.0.4",
+    "flatpickr": "^4.5.2",
+    "inputmask": "^4.0.2"
   }
 }
